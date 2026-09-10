@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananto Islam Nijhum - Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF7EC;
+  --paper-dark:#F3ECDA;
+  --ink:#1E2A45;
+  --ink-soft:#4A5578;
+  --red:#E8543E;
+  --blue:#2F6FED;
+  --green:#2E9E6C;
+  --purple:#8B5CF6;
+  --orange:#F4A339;
+  --teal:#1FA2A6;
+  --yellow:#FFDE59;
+  --chalk:#1F3A2E;
+  --radius:18px;
+  --shadow: 0 10px 30px rgba(30,42,69,.12);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  background-image:
+    linear-gradient(var(--paper-dark) 1px, transparent 1px);
+  background-size: 100% 42px;
+}
+h1,h2,h3,.brand,.tab-label{font-family:'Baloo 2',sans-serif;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+@media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+/* ---------- NAV ---------- */
+header{
+  position:sticky; top:0; z-index:60;
+  background:rgba(251,247,236,.92);
+  backdrop-filter:blur(6px);
+  border-bottom:3px solid var(--ink);
+}
+.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand{font-weight:800;font-size:1.3rem;letter-spacing:.3px;}
+.brand span{color:var(--red);}
+nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap;}
+nav a{
+  text-decoration:none;font-weight:600;font-size:.9rem;color:var(--ink);
+  padding:8px 12px;border-radius:10px;
+}
+nav a:hover{background:var(--yellow);}
+#menu-btn{display:none;background:var(--ink);color:var(--paper);border:none;border-radius:10px;padding:8px 12px;font-size:1.1rem;cursor:pointer;}
+@media (max-width:900px){
+  nav ul{position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;border-bottom:3px solid var(--ink);padding:10px;display:none;}
+  nav ul.open{display:flex;}
+  #menu-btn{display:block;}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:70px 24px 90px;
+  background:radial-gradient(circle at 15% 20%, #fff6d8 0, transparent 45%),
+             radial-gradient(circle at 85% 80%, #e6f7f1 0, transparent 45%),
+             var(--paper);
+  border-bottom:4px dashed var(--ink);
+}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}}
+.eyebrow-tag{
+  display:inline-block;background:var(--yellow);border:2px solid var(--ink);border-radius:30px;
+  padding:5px 16px;font-weight:700;font-size:.85rem;transform:rotate(-2deg);margin-bottom:18px;
+}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;margin:0 0 14px;}
+.hero h1 .u{position:relative;display:inline-block;}
+.hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:14px;background:var(--yellow);z-index:-1;opacity:.8;}
+.hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:52ch;margin-bottom:26px;}
+.hero-stats{display:flex;gap:14px;flex-wrap:wrap;}
+.stat-chip{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:10px 16px;box-shadow:var(--shadow);}
+.stat-chip b{display:block;font-size:1.4rem;font-family:'Baloo 2';}
+.stat-chip span{font-size:.78rem;color:var(--ink-soft);}
+.hero-photo{position:relative;justify-self:center;}
+.hero-photo .frame{
+  width:280px;border:6px solid #fff;outline:3px solid var(--ink);border-radius:12px;
+  box-shadow:var(--shadow);transform:rotate(3deg);background:#fff;
+}
+.hero-photo img{border-radius:6px;}
+.doodle{position:absolute;opacity:.9;}
+.d1{top:-20px;left:-30px;width:60px;animation:float1 6s ease-in-out infinite;}
+.d2{bottom:-10px;right:-20px;width:50px;animation:float2 7s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg);}50%{transform:translateY(-10px) rotate(8deg);}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(5deg);}50%{transform:translateY(12px) rotate(-6deg);}}
+
+.story-grid{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;}
+@media(max-width:900px){.story-grid{grid-template-columns:1fr;}}
+.square-frame{width:220px;height:220px;border:6px solid #fff;outline:3px solid var(--ink);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;background:#fff;justify-self:center;transform:rotate(-2deg);}
+.square-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+@media(max-width:900px){.square-frame{justify-self:start;}}
+.section{max-width:1200px;margin:0 auto;padding:70px 24px;}
+.folder-tab{
+  display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:700;
+  padding:10px 26px 12px;border-radius:14px 14px 0 0;font-size:1.05rem;
+  transform:translateY(2px);
+}
+.folder-body{
+  background:#fff;border:3px solid var(--ink);border-radius:0 16px 16px 16px;
+  padding:32px;box-shadow:var(--shadow);
+}
+.section h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 6px;}
+.section .sub{color:var(--ink-soft);margin:0 0 26px;max-width:70ch;line-height:1.55;}
+.tone-red .folder-tab{background:var(--red);} .tone-red{--accent:var(--red);}
+.tone-blue .folder-tab{background:var(--blue);} .tone-blue{--accent:var(--blue);}
+.tone-green .folder-tab{background:var(--green);} .tone-green{--accent:var(--green);}
+.tone-purple .folder-tab{background:var(--purple);} .tone-purple{--accent:var(--purple);}
+.tone-orange .folder-tab{background:var(--orange);} .tone-orange{--accent:var(--orange);}
+.tone-teal .folder-tab{background:var(--teal);} .tone-teal{--accent:var(--teal);}
+
+/* ---------- GRIDS / CARDS ---------- */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
+.card{
+  background:var(--paper);border:2px solid var(--ink);border-radius:14px;overflow:hidden;
+  cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{transform:translateY(-4px) rotate(-1deg);box-shadow:var(--shadow);}
+.card .thumb{height:190px;background:#e8e3d1;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.card .thumb img,.card .thumb video,.card .thumb canvas{width:100%;height:100%;object-fit:contain;display:block;background:#efe9d8;}
+.card .thumb canvas{background:#fff;}
+.card .thumb .play,.card .thumb .pdf-ico{font-size:2rem;}
+.pdf-badge{position:absolute;bottom:7px;left:7px;background:var(--red);color:#fff;font-size:.62rem;font-weight:800;padding:3px 9px;border-radius:6px;letter-spacing:.6px;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,.25);}
+.card .cap{padding:10px 12px;font-size:.83rem;font-weight:600;line-height:1.3;}
+.card .cap small{display:block;font-weight:500;color:var(--ink-soft);margin-top:2px;}
+.pin{position:absolute;top:8px;right:10px;font-size:1.1rem;transform:rotate(15deg);}
+
+.achieve-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:6px;}
+.achieve-card{
+  flex:1 1 260px;background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:18px;
+}
+.achieve-card h3{margin:0 0 6px;font-size:1.05rem;color:var(--accent,var(--ink));}
+.achieve-card ul{margin:8px 0 0;padding-left:18px;font-size:.92rem;line-height:1.5;color:var(--ink-soft);}
+.badge{display:inline-block;background:var(--yellow);border:1.5px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:.75rem;font-weight:700;margin-top:8px;}
+
+.timeline{border-left:3px dashed var(--ink);margin-left:8px;padding-left:24px;}
+.tl-item{position:relative;margin-bottom:22px;}
+.tl-item::before{content:"";position:absolute;left:-31px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--accent,var(--ink));border:2px solid var(--ink);}
+.tl-item h4{margin:0 0 3px;font-size:1rem;}
+.tl-item .when{font-size:.78rem;font-weight:700;color:var(--accent,var(--ink-soft));}
+.tl-item p{margin:6px 0 0;color:var(--ink-soft);font-size:.92rem;line-height:1.5;}
+
+/* skills */
+.skill-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));}
+.skill-box{border:2px solid var(--ink);border-radius:14px;padding:16px 18px;background:var(--paper);}
+.skill-box h4{margin:0 0 8px;font-size:.95rem;display:flex;align-items:center;gap:8px;}
+.pill-wrap{display:flex;flex-wrap:wrap;gap:6px;}
+.pill{background:#fff;border:1.5px solid var(--ink);border-radius:20px;padding:3px 10px;font-size:.76rem;font-weight:600;}
+
+/* gif dividers */
+.gif-divider{display:flex;align-items:center;justify-content:center;gap:14px;padding:30px 24px;flex-wrap:wrap;}
+.gif-divider .note{font-family:'Baloo 2';font-weight:700;color:var(--ink-soft);font-size:1rem;max-width:260px;text-align:center;}
+.gif-frame{border:3px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+
+/* footer */
+footer{background:var(--chalk);color:#f1efe4;padding:50px 24px 30px;margin-top:40px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+footer h3{font-family:'Baloo 2';margin:0 0 8px;}
+footer p{color:#c8d0c3;font-size:.9rem;max-width:50ch;line-height:1.5;}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(20,25,20,.88);display:none;align-items:center;justify-content:center;z-index:200;padding:24px;}
+.lightbox.open{display:flex;}
+.lightbox-inner{max-width:min(900px,92vw);max-height:88vh;background:#111;border-radius:14px;overflow:hidden;position:relative;border:3px solid var(--yellow);}
+.lightbox-inner img,.lightbox-inner video{max-width:100%;max-height:76vh;display:block;margin:0 auto;background:#000;}
+.lightbox-inner iframe{width:min(820px,88vw);height:78vh;border:none;background:#fff;}
+.lightbox-cap{color:#fff;padding:12px 18px;font-size:.9rem;background:#000;}
+.lb-close{position:absolute;top:8px;right:12px;background:var(--red);color:#fff;border:none;width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer;z-index:2;}
+
+.scroll-note{text-align:center;font-size:.8rem;color:var(--ink-soft);margin-top:6px;}
+
+/* ---------- PRINT: every bordered box = exactly one A4 page ---------- */
+@media print{
+  @page{ size:A4; margin:10mm; }
+  html,body{background:none !important;}
+  *{box-shadow:none !important; animation:none !important; transition:none !important;}
+  header,#menu-btn,.gif-divider,#lightbox,.doodle,.pin{display:none !important;}
+
+  /* Each top-level section becomes one fixed-size A4 page. The folder-tab
+     (if present) keeps its natural height; the folder-body (the bordered
+     rectangle) fills all remaining space on that page - always. */
+  body > section{
+    width:190mm; height:277mm;
+    margin:0 !important; padding:0 !important;
+    box-sizing:border-box;
+    display:flex; flex-direction:column;
+    break-after:page; page-break-after:always;
+    break-inside:avoid; page-break-inside:avoid;
+    overflow:hidden;
+  }
+  body > section:last-of-type{ break-after:auto; page-break-after:auto; }
+  body > footer{
+    width:190mm; margin:0 !important; padding:10px 6px !important;
+    box-sizing:border-box; break-before:auto;
+  }
+
+  .folder-tab{flex:0 0 auto; padding:6px 16px 8px; font-size:.85rem; margin:0;}
+  .folder-body{
+    flex:1 1 auto; min-height:0; width:100%;
+    box-sizing:border-box; position:relative; overflow:hidden;
+    padding:10px 14px !important; box-shadow:none; border-width:1.5px;
+  }
+  /* The scaled inner wrapper - the ONLY thing that shrinks. The bordered
+     box around it (.folder-body) never changes size. */
+  .content-fit{transform-origin:top left;}
+
+  .hero{
+    width:190mm; height:277mm; margin:0 !important; padding:0 !important;
+    box-sizing:border-box; display:flex; align-items:center; overflow:hidden;
+  }
+  .hero-inner{grid-template-columns:1fr auto;gap:10mm;align-items:center;width:100%;}
+  .hero-stats{gap:6px;}
+  .stat-chip{padding:5px 9px;}
+  .hero-photo .frame{width:170px;}
+  .square-frame{width:130px;height:130px;}
+  .story-grid{gap:10mm;}
+
+  .section h2,.hero h1{font-size:1.2rem;margin:0 0 4px;}
+  .section .sub,.hero p.lead{font-size:.78rem;margin:0 0 10px;line-height:1.35;}
+  .section h2,.hero h1,.folder-tab,.section h3{break-after:avoid-page; page-break-after:avoid;}
+  p{orphans:3; widows:3;}
+
+  /* dense grid so a page can hold as many thumbnails as possible before scaling kicks in */
+  .grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr)) !important;gap:6px !important;}
+  .grid.wide{grid-template-columns:repeat(auto-fill,minmax(145px,1fr)) !important;}
+  .card{cursor:default; break-inside:avoid; page-break-inside:avoid;}
+  .card:hover{transform:none;}
+  .card .thumb{height:78px;}
+  .card .cap{font-size:.6rem;padding:4px 6px;line-height:1.2;}
+  .card .cap small{margin-top:1px;}
+  .pdf-badge{font-size:.5rem;padding:2px 6px;}
+
+  .achieve-row{gap:8px;}
+  .achieve-card{padding:8px 10px; break-inside:avoid; page-break-inside:avoid;}
+  .achieve-card h3{font-size:.82rem;margin:0 0 4px;}
+  .achieve-card p,.achieve-card ul{font-size:.72rem;line-height:1.3;}
+
+  .timeline{padding-left:14px;margin-left:4px;}
+  .tl-item{margin-bottom:7px; break-inside:avoid; page-break-inside:avoid;}
+  .tl-item h4{font-size:.8rem;}
+  .tl-item .when{font-size:.66rem;}
+  .tl-item p{font-size:.7rem;margin-top:2px;}
+
+  .skill-grid{grid-template-columns:repeat(auto-fill,minmax(135px,1fr)) !important;gap:6px !important;}
+  .skill-box{padding:8px 10px; break-inside:avoid; page-break-inside:avoid;}
+  .skill-box h4{font-size:.78rem;margin:0 0 5px;}
+  .pill{font-size:.62rem;padding:2px 7px;}
+
+  table{font-size:.7rem !important;}
+  table tr{break-inside:avoid; page-break-inside:avoid;}
+  table td{padding:5px 6px !important;}
+
+  footer h3{font-size:.95rem;}
+  footer p{font-size:.72rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">Ananto Islam <span>Nijhum</span></div>
+    <button id="menu-btn" aria-label="Menu">☰</button>
+    <nav><ul id="nav-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#debate">Debate</a></li>
+      <li><a href="#bncc">BNCC</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#creative">Creative</a></li>
+      <li><a href="#tech">Tech</a></li>
+      <li><a href="#work">Experience</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow-tag"> The Portfolio of</span>
+      <h1>MD Ananto Islam <span class="u">Nijhum</span></h1>
+      <p class="lead">Debater, science-fair builder, graphic designer, community manager, and a person who learned to run a household before he learned calculus. This is the paper trail of everything that got built along the way.</p>
+      <div class="hero-stats">
+        <div class="stat-chip"><b>9+</b><span>years of BNCC service</span></div>
+        <div class="stat-chip"><b>6</b><span>years of competitive debate</span></div>
+        <div class="stat-chip"><b>2019–25</b><span>ethanol research project</span></div>
+        <div class="stat-chip"><b>3</b><span>languages spoken</span></div>
+        <div class="stat-chip"><b>100K+</b><span>community members managed</span></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <svg class="doodle d1" viewBox="0 0 64 64"><path d="M8 56 L48 16 L54 22 L14 62 Z" fill="#F4A339" stroke="#1E2A45" stroke-width="2"/><path d="M48 16 L54 10 L60 16 L54 22 Z" fill="#2F6FED" stroke="#1E2A45" stroke-width="2"/></svg>
+      <div class="frame"><img src="" data-asset="self-portrait-formal-outfit.jpeg" alt="Portrait of Ananto"></div>
+      <svg class="doodle d2" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="#FFDE59" stroke="#1E2A45" stroke-width="2"/><path d="M20 32 h24 M32 20 v24" stroke="#1E2A45" stroke-width="3"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / JOURNEY -->
+<section class="section">
+  <div class="folder-body" style="border-radius:16px;">
+    <div class="story-grid">
+      <div>
+        <h2>The short version</h2>
+        <p class="sub">Born in Chuadanga in 2005, raised across Kushtia, Dhaka and Beanibazar, Sylhet. Lost my father, a government agricultural officer, in 2017 when I was twelve, a stroke took him in six days. Everything after that was rebuilt from scratch: household finances, my father's pension paperwork, and eventually my own academic path, which went from top-ten student, to a collapse in grades, to a full year working ten-hour shifts as a computer operator, to finding my way back into a classroom with a completely new stream of study and a much clearer sense of why I was there. Along the way I kept building things anyway, a science project that survived six years of contests, a debate career, a national cadet corps rank, and a design and technology practice that started as a childhood obsession with computers.</p>
+      </div>
+      <div class="square-frame"><img src="" data-asset="childhood.jpg" alt="Childhood photo of Ananto"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GIF DIVIDER -->
+<div class="gif-divider">
+  <div class="gif-frame"><iframe src="https://giphy.com/embed/xUPJPJ7qBST2wryzsc" width="220" height="165" frameBorder="0" class="giphy-embed" allowFullScreen title="school gif"></iframe></div>
+  <div class="note">Somewhere between homework and household bills, I turned into this guy 👇</div>
+</div>
+
+<!-- ACADEMICS -->
+<section class="section tone-blue" id="academics">
+  <div class="folder-tab">🎓 Academic Profile</div>
+  <div class="folder-body">
+    <h2>Two very different transcripts, one continuous student</h2>
+    <p class="sub">Started in the Science stream, lost momentum after 2017, then rebuilt in Business Studies after a year away from formal school. Served as Class Representative throughout secondary school.</p>
+    <div class="achieve-row">
+      <div class="achieve-card">
+        <h3>SSC - 2022</h3>
+        <p>GPA 4.11/5.00 · Science stream · Bangladeshi curriculum</p>
+        <span class="badge">Class Representative</span>
+      </div>
+      <div class="achieve-card">
+        <h3>HSC - 2025</h3>
+        <p>GPA 4.00/5.00 · Business Studies · switched streams after returning from a full year of work</p>
+        <span class="badge">Stream change: Science → Business</span>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:26px;" id="academics-grid"></div>
+  </div>
+</section>
+
+<!-- DEBATE -->
+<section class="section tone-red" id="debate">
+  <div class="folder-tab">🎙️ Debate &amp; Public Speaking</div>
+  <div class="folder-body">
+    <h2>Started arguing in 2017. Never really stopped.</h2>
+    <p class="sub">Six years of competitive debate across school, college and university-level circuits, plus two years helping run the club itself.</p>
+    <div class="timeline">
+      <div class="tl-item"><span class="when">2023</span><h4>Shahjalal University Debate Fest (SUDS)</h4><p>4 rounds, won 3. Named Best Speaker of the Day after the first break.</p></div>
+      <div class="tl-item"><span class="when">2024</span><h4>Leading University Debate Fest (LUDC)</h4><p>6 rounds against university-level debaters, won 4.</p></div>
+      <div class="tl-item"><span class="when">2024</span><h4>Vice President, SGC Debating Club</h4><p>4th Executive Committee, ~140 members. Introduced regular practice sessions and workshops, led a team that organized 3 intra-club events.</p></div>
+      <div class="tl-item"><span class="when">2025</span><h4>PRE-WSDC - International Selection Round</h4><p>~80 teams, AP format, 2nd Speaker/DPM. Won 5 of 6 rounds and finished Best Speaker on the team - in the team's first-ever appearance.</p></div>
+      <div class="tl-item"><span class="when">2025</span><h4>Teenagers' Festival Debate Competition</h4><p>Awarded Best Speaker for logical argumentation opponents struggled to counter.</p></div>
+    </div>
+    <div class="grid" style="margin-top:28px;" id="debate-grid"></div>
+  </div>
+</section>
+
+<!-- BNCC -->
+<section class="section tone-green" id="bncc">
+  <div class="folder-tab">🎖️ Bangladesh National Cadet Corps</div>
+  <div class="folder-body">
+    <h2>Eight years in uniform - 2017 to 2025</h2>
+    <p class="sub">Lance Corporal (Class 7–8, PHG Govt. High School) → Corporal (Class 11–12, Sylhet Government College). Battalion Camp (2017), Regimental Camp (2024), Central Camp (2025), plus national-level Dance &amp; Theatre, military-style Drill, and Quiz activities alongside public performances.</p>
+    <div class="achieve-row">
+      <div class="achieve-card"><h3>Best English Speaker</h3><p>Central Camp 2025, out of ~600 cadets. Impromptu rounds on unemployment in Bangladesh and how computers are shaping the new era - reasoning and structuring a speech on an unfamiliar topic under time pressure.</p></div>
+      <div class="achieve-card"><h3>Cox's Bazar performance trip</h3><p>Part of a 50-cadet Dance &amp; Theatre group; the group earned a fully-funded, 7-day trip with five-star accommodation. Personally responsible for the safety and wellbeing of 6 cadets (4 girls, 2 boys) throughout.</p></div>
+      <div class="achieve-card"><h3>Runner-up, Volleyball</h3><p>Inter-Company Volleyball Competition, 2024.</p></div>
+      <div class="achieve-card"><h3>Quiz &amp; drill</h3><p>Participated in national BNCC quiz competitions and military-style drill events, building rapid recall and discipline alongside the public-speaking and leadership work.</p></div>
+    </div>
+    <div class="grid" style="margin-top:26px;" id="bncc-grid"></div>
+  </div>
+</section>
+
+<div class="gif-divider">
+  <div class="gif-frame"><iframe src="https://giphy.com/embed/s7ioMKK3y4LjEnZGzB" width="220" height="165" frameBorder="0" class="giphy-embed" allowFullScreen title="running gif"></iframe></div>
+  <div class="note">Ten-hour shifts, six science-fair rebuilds, drills at dawn - momentum was the whole strategy.</div>
+</div>
+
+<!-- SCIENCE -->
+<section class="section tone-teal" id="science">
+  <div class="folder-tab">🔬 Science &amp; Technology</div>
+  <div class="folder-body">
+    <h2>One research question, six years of rebuilding it</h2>
+    <p class="sub">A long-running project on producing ethanol from waste starch food - started in 2019, rebuilt and re-presented nearly every year through 2025, moving from a team-built model to a solo-designed final version.</p>
+    <div class="timeline">
+      <div class="tl-item"><span class="when">2016</span><h4>Solar Car</h4><p>Early hands-on science project, built and presented.</p></div>
+      <div class="tl-item"><span class="when">2017</span><h4>Solar Oven</h4><p>Second early project exploring solar heat generation.</p></div>
+      <div class="tl-item"><span class="when">2019</span><h4>Ethanol-from-starch - 3rd, Divisional</h4><p>First version of the long-running project.</p></div>
+      <div class="tl-item"><span class="when">2022 &amp; 2023</span><h4>1st Position, District Level</h4><p>Two consecutive years leading a small team through rebuilds of the project.</p></div>
+      <div class="tl-item"><span class="when">2024</span><h4>1st Position, Divisional Level</h4><p>Improved starch collection process and fuel-mixture efficiency.</p></div>
+      <div class="tl-item"><span class="when">2025</span><h4>1st Position, School Level → qualified for District</h4><p>Designed and built the final version independently; could not attend Districts due to HSC exams.</p></div>
+    </div>
+    <div class="achieve-row" style="margin-top:10px;">
+      <div class="achieve-card"><h3>International Climate Science Olympiad - 2024</h3><p>Advanced to the Quarter-Final stage in the online international competition.</p></div>
+    </div>
+    <div class="grid" style="margin-top:26px;" id="science-grid"></div>
+  </div>
+</section>
+
+<!-- BUSINESS -->
+<section class="section tone-purple" id="business">
+  <div class="folder-tab">📊 Business Case Competitions</div>
+  <div class="folder-body">
+    <h2>Turning a case study into a pitch deck</h2>
+    <p class="sub">Applied Business Studies coursework to live case competitions - structured problem analysis, financial/strategic reasoning, and slide design under time pressure.</p>
+    <div class="grid wide" id="business-grid"></div>
+  </div>
+</section>
+
+<!-- CREATIVE -->
+<section class="section tone-orange" id="creative">
+  <div class="folder-tab">🎨 Creative &amp; Design Work</div>
+  <div class="folder-body">
+    <h2>Photoshop, Illustrator, Canva - then Premiere and After Effects</h2>
+    <p class="sub">Paid design work for the American Leading Center and Sozoo Today: social posts, ads, educational graphics, and course materials. More recently, motion graphics and video editing.</p>
+    <h3 style="margin-top:6px;">Graphic design gallery</h3>
+    <div class="grid" id="design-grid"></div>
+    <h3 style="margin-top:30px;">Motion graphics &amp; video editing</h3>
+    <div class="grid wide" id="video-grid"></div>
+    <h3 style="margin-top:30px;">Presentation design</h3>
+    <div class="grid wide" id="deck-grid"></div>
+  </div>
+</section>
+
+<div class="gif-divider">
+  <div class="gif-frame"><iframe src="https://giphy.com/embed/VOd5RQ7q8FNI3IjS5g" width="220" height="220" frameBorder="0" class="giphy-embed" allowFullScreen title="pointing gif"></iframe></div>
+  <div class="note">Student. Designer. IT lead. Cadet. Debater. Same person, every time.</div>
+</div>
+
+<!-- TECH -->
+<section class="section tone-blue" id="tech">
+  <div class="folder-tab">💻 Programming &amp; Software</div>
+  <div class="folder-body">
+    <h2>From "how do computers work" to actually shipping things</h2>
+    <p class="sub">Self-taught, starting in childhood: HTML/CSS/JavaScript, WordPress and CMS platforms, Python and Java, computer building, system setup and hardware/software troubleshooting, and more recently, AI prompt engineering and AI-assisted development.</p>
+    <div class="achieve-row">
+      <div class="achieve-card"><h3>AchievementDNA</h3><p>A personal achievement-tracking application with login, dashboard, database and achievements views - built and iterated as a solo software project.</p></div>
+      <div class="achieve-card"><h3>Media Finder (Windows)</h3><p>A desktop utility for scanning, finding and managing media files, with a main window, scan window, and an about/developer screen.</p></div>
+      <div class="achieve-card"><h3>Personal Focus To-Do List (Windows)</h3><p>A productivity app built around task organization and focus.</p></div>
+      <div class="achieve-card"><h3>AI &amp; prompt engineering</h3><p>Builds structured prompts for generative AI systems and uses AI-assisted workflows across content creation, software development and everyday problem solving.</p></div>
+      <div class="achieve-card"><h3>Tech support, unofficially</h3><p>Years of informal troubleshooting and setup help for teachers, students, classmates, school clubs and community members.</p></div>
+    </div>
+    <h3 style="margin-top:30px;">Project screenshots</h3>
+    <div class="grid wide" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section class="section tone-green" id="work">
+  <div class="folder-tab">💼 Work Experience</div>
+  <div class="folder-body">
+    <h2>Paid work, starting at sixteen</h2>
+    <div class="timeline">
+      <div class="tl-item"><span class="when">2020–2024</span><h4>Esports &amp; Community Manager</h4><p>Moderated and organized events across ESPL ASIA (Bangladesh, Pakistan, Nepal, Bhutan) and the Call of Duty: Mobile Bangladesh community - 100,000+ members combined.</p></div>
+      <div class="tl-item"><span class="when">2021–2024</span><h4>Graphics Designer - American Leading Center, Biswanath</h4><p>Social posts, ads, educational and course materials.</p></div>
+      <div class="tl-item"><span class="when">2021–2024</span><h4>Founding Member &amp; Head of IT - Sozoo Today</h4><p>Joined a 6–7 person media startup at 16; grew the technology function as the org scaled to ~65 people. Owned every platform: Facebook, Instagram, LinkedIn, email, and the website. Recruited and trained the IT team. Left when the organization's editorial direction shifted in a way that no longer matched what I thought was right for readers.</p></div>
+      <div class="tl-item"><span class="when">Sept 2022 – Oct 2023</span><h4>Computer Operator, local computer shop</h4><p>Ten hours a day, seven days a week, for over a year - the gap year between SSC and re-enrolling in college. Customer troubleshooting, hardware/software fixes, and online-service support.</p></div>
+    </div>
+    <div class="grid" style="margin-top:26px;" id="work-grid"></div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="section tone-purple" id="writing">
+  <div class="folder-tab">✍️ Freelance Writing</div>
+  <div class="folder-body">
+    <h2>Blog, SEO and content writing since 2019</h2>
+    <p class="sub">Remote work for Bangladeshi clients across health, technology, lifestyle and guide content - up to ~30,000 words a month at peak.</p>
+    <div class="grid wide" id="blog-grid"></div>
+  </div>
+</section>
+
+<!-- SERVICE / TEACHING -->
+<section class="section tone-teal" id="service">
+  <div class="folder-tab">🤝 Teaching &amp; Community Service</div>
+  <div class="folder-body">
+    <h2>Explaining things is its own skill</h2>
+    <div class="achieve-row">
+      <div class="achieve-card"><h3>English tutoring</h3><p>Taught academic English one-on-one, building custom study notes and simplifying difficult concepts for each student.</p></div>
+      <div class="achieve-card"><h3>Peer academic support</h3><p>Helped classmates work through coursework, shared notes, and offered informal study guidance.</p></div>
+      <div class="achieve-card"><h3>Informal tech support</h3><p>Regularly helped teachers, classmates and community members with computer setup, software installs and troubleshooting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="folder-body" style="border-radius:16px;">
+    <h2>Skills at a glance</h2>
+    <div class="skill-grid" style="margin-top:10px;">
+      <div class="skill-box"><h4>🗣️ Communication</h4><div class="pill-wrap"><span class="pill">Debate</span><span class="pill">Public speaking</span><span class="pill">Impromptu speech</span><span class="pill">Teaching</span><span class="pill">Pitching</span><span class="pill">Content writing</span></div></div>
+      <div class="skill-box"><h4>🧭 Leadership</h4><div class="pill-wrap"><span class="pill">Delegation</span><span class="pill">Recruitment</span><span class="pill">Training</span><span class="pill">Event organization</span><span class="pill">Mentoring</span></div></div>
+      <div class="skill-box"><h4>🧠 Analytical</h4><div class="pill-wrap"><span class="pill">Critical thinking</span><span class="pill">Case analysis</span><span class="pill">Research</span><span class="pill">Systems thinking</span><span class="pill">Troubleshooting</span></div></div>
+      <div class="skill-box"><h4>🛠️ Technical</h4><div class="pill-wrap"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">HTML/CSS/JS</span><span class="pill">WordPress</span><span class="pill">Computer building</span><span class="pill">AI prompt engineering</span></div></div>
+      <div class="skill-box"><h4>🎨 Creative</h4><div class="pill-wrap"><span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">Canva</span><span class="pill">Premiere Pro</span><span class="pill">After Effects</span><span class="pill">CapCut</span></div></div>
+      <div class="skill-box"><h4>🌐 Languages</h4><div class="pill-wrap"><span class="pill">Bangla - Native</span><span class="pill">English - C1/C2</span><span class="pill">Hindi - Conversational</span></div></div>
+      <div class="skill-box"><h4>📊 Office &amp; productivity</h4><div class="pill-wrap"><span class="pill">Microsoft Word</span><span class="pill">Excel</span><span class="pill">PowerPoint</span><span class="pill">Data organization</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE TALENT AREAS -->
+<section class="section">
+  <div class="folder-body" style="border-radius:16px;">
+    <h2>Six threads, one person</h2>
+    <p class="sub">Taken together, the activities above point to a small number of abilities that show up again and again, in very different rooms.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:.92rem;">
+      <tbody>
+        <tr style="border-bottom:2px solid var(--ink);"><td style="padding:10px 8px;font-weight:700;width:26%;">Technology &amp; Computing</td><td style="padding:10px 8px;color:var(--ink-soft);">Programming, software projects, IT leadership at Sozoo Today, web development, hardware/software troubleshooting</td></tr>
+        <tr style="border-bottom:2px solid var(--paper-dark);"><td style="padding:10px 8px;font-weight:700;">Communication &amp; Debate</td><td style="padding:10px 8px;color:var(--ink-soft);">6 years of competitive debate, multiple Best Speaker awards, workshops, public speaking</td></tr>
+        <tr style="border-bottom:2px solid var(--paper-dark);"><td style="padding:10px 8px;font-weight:700;">Science &amp; Innovation</td><td style="padding:10px 8px;color:var(--ink-soft);">2016–2025 project history, the long-running ethanol project, five science-fair wins, an international Olympiad quarter-final</td></tr>
+        <tr style="border-bottom:2px solid var(--paper-dark);"><td style="padding:10px 8px;font-weight:700;">Leadership &amp; Service</td><td style="padding:10px 8px;color:var(--ink-soft);">Debate club Vice President, 8 years in BNCC, team leadership, recruitment, training, event organization</td></tr>
+        <tr style="border-bottom:2px solid var(--paper-dark);"><td style="padding:10px 8px;font-weight:700;">Creative Production</td><td style="padding:10px 8px;color:var(--ink-soft);">Graphic design, video editing, motion graphics, presentation and pitch-deck design</td></tr>
+        <tr><td style="padding:10px 8px;font-weight:700;">Business &amp; Strategy</td><td style="padding:10px 8px;color:var(--ink-soft);">Business Studies background, case competitions (MarXellence, Creadive), pitch decks under time pressure</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- GALLERY WALL -->
+<section class="section tone-orange" id="gallery">
+  <div class="folder-tab">📸 Gallery Wall</div>
+  <div class="folder-body">
+    <h2>A few more moments</h2>
+    <div class="grid" id="wall-grid"></div>
+  </div>
+</section>
+
+<div class="gif-divider">
+  <div class="gif-frame"><iframe src="https://giphy.com/embed/iYRtrxNp8T854yWCtg" width="220" height="220" frameBorder="0" class="giphy-embed" allowFullScreen title="pointing gif 2"></iframe></div>
+  <div class="note">Still building. Still learning. Still going.</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div><h3>MD Ananto Islam Nijhum</h3><p>Beanibazar, Sylhet · Bangladesh</p></div>
+    <div><p>This portfolio is a working document - a companion to a formal application, not a replacement for one. Click any photo, video or PDF to view it in full.</p></div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner" id="lightbox-inner"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+if(window.pdfjsLib){
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+}
+const ASSET_DIR = "assets/";
+function a(name){ return ASSET_DIR + encodeURIComponent(name); }
+function ext(name){ return name.split('.').pop().toLowerCase(); }
+function kind(name){
+  const e = ext(name);
+  if(['jpg','jpeg','png','webp'].includes(e)) return 'image';
+  if(['mp4','webm','mov'].includes(e)) return 'video';
+  if(e==='pdf') return 'pdf';
+  return 'other';
+}
+function iconFor(k){ return k==='video' ? '▶️' : (k==='pdf' ? '📄' : '🖼️'); }
+
+function card(file, caption, sub){
+  const k = kind(file);
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.onclick = () => openLightbox(file, caption);
+  let thumbHTML = '';
+  if(k==='image'){
+    thumbHTML = `<img loading="lazy" src="${a(file)}" alt="${caption||''}">`;
+  } else if(k==='video'){
+    thumbHTML = `<video muted preload="metadata" src="${a(file)}#t=0.5"></video><span class="play" style="position:absolute;">▶️</span>`;
+  } else if(k==='pdf'){
+    thumbHTML = `<canvas class="pdf-canvas"></canvas><span class="pdf-badge">PDF</span>`;
+  } else {
+    thumbHTML = `<span class="pdf-ico">📄</span>`;
+  }
+  div.innerHTML = `<div class="thumb">${thumbHTML}<span class="pin">📌</span></div>
+    <div class="cap">${caption||file}${sub? `<small>${sub}</small>`:''}</div>`;
+  if(k==='pdf'){
+    const canvas = div.querySelector('.pdf-canvas');
+    renderPdfThumbnail(canvas, a(file));
+  }
+  return div;
+}
+
+/* Render the first page of a PDF onto a canvas as a real thumbnail (via PDF.js).
+   Falls back to a plain icon if PDF.js or the file can't be loaded. */
+async function renderPdfThumbnail(canvas, url){
+  try{
+    if(!window.pdfjsLib) throw new Error('pdf.js not loaded');
+    const pdf = await pdfjsLib.getDocument(url).promise;
+    const page = await pdf.getPage(1);
+    const viewport = page.getViewport({scale:2});
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({canvasContext:ctx, viewport}).promise;
+  }catch(e){
+    const thumb = canvas.parentElement;
+    if(thumb){
+      const badge = thumb.querySelector('.pdf-badge');
+      thumb.innerHTML = `<span class="pdf-ico">📄</span>${badge? badge.outerHTML : ''}<span class="pin">📌</span>`;
+    }
+  }
+}
+
+function renderGrid(id, items){
+  const el = document.getElementById(id);
+  if(!el) return;
+  items.forEach(it => el.appendChild(card(it.file, it.cap, it.sub)));
+}
+
+function openLightbox(file, caption){
+  const k = kind(file);
+  const inner = document.getElementById('lightbox-inner');
+  let body = '';
+  if(k==='image') body = `<img src="${a(file)}" alt="${caption||''}">`;
+  else if(k==='video') body = `<video src="${a(file)}" controls autoplay></video>`;
+  else if(k==='pdf') body = `<iframe src="${a(file)}"></iframe>`;
+  inner.innerHTML = `<button class="lb-close" onclick="closeLightbox()">✕</button>${body}<div class="lightbox-cap">${caption||''}</div>`;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightbox-inner').innerHTML = '';
+}
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target.id==='lightbox') closeLightbox(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+/* hero photo + doodle image */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-asset]').forEach(img => { img.src = a(img.dataset.asset); });
+
+  /* Wrap each folder-body's content in a single inner div so it can be
+     scaled as one unit for print, while the bordered box itself (folder-body)
+     always stays exactly one A4 page tall/wide. */
+  document.querySelectorAll('.folder-body').forEach(fb => {
+    const wrap = document.createElement('div');
+    wrap.className = 'content-fit';
+    while(fb.firstChild) wrap.appendChild(fb.firstChild);
+    fb.appendChild(wrap);
+  });
+
+  renderGrid('academics-grid', [
+    {file:'SSC Academic Transcript.jpg', cap:'SSC Transcript', sub:'GPA 4.11 · Science, 2022'},
+    {file:'HSC Academic Transcript.jpg', cap:'HSC Transcript', sub:'GPA 4.00 · Business Studies, 2025'},
+    {file:'torongo-quiz-first-position-crest-on-my-desk.jpg', cap:'1st Position, Torongo Quiz', sub:'Academic quiz competition'},
+  ]);
+
+  renderGrid('debate-grid', [
+    {file:'Suds-fest-champion-crest.jpg', cap:'SUDS Fest champion crest', sub:'Shahjalal University Debate Fest, 2023'},
+    {file:'my-and-other-club-member-at-SUDS-debate-fest.jpg', cap:'With teammates at SUDS Fest'},
+    {file:'at-ludc-fest-prepping-for-debate.jpg', cap:'Prepping backstage, LUDC Fest', sub:'Leading University Debate Fest, 2024'},
+    {file:'taking-practice-debate-session-as-adjudicator.jpg', cap:'Running a practice session', sub:'As adjudicator, club workshops'},
+    {file:'me-on-right-debating-club-presiedent-in-middle-treasurer-on-right.jpg', cap:'Debate club executive committee', sub:'Vice President, SGC Debating Club'},
+    {file:'me-at-pre-wsdc.jpg', cap:'PRE-WSDC selection round, 2025'},
+    {file:'pre-wdsc-image-1.jpg', cap:'PRE-WSDC - in round'},
+    {file:'pre-wdsc-team-poster.jpg', cap:'Team poster, PRE-WSDC 2025'},
+    {file:'me-giving-a-speech.jpeg', cap:'Mid-speech'},
+    {file:'Self image giving speech.jpg', cap:'On the floor, mid-argument'},
+    {file:'suds_fest_participation_certificate.jpeg', cap:'SUDS Fest participation certificate', sub:'Shahjalal University Debate Fest, 2023'},
+    {file:'govt_college_debating_club_vice_president_acknowledgement_certificate.jpeg', cap:'Vice President acknowledgement certificate', sub:'SGC Debating Club, 4th Executive Committee'},
+    {file:'teenagers_festival_debate_competiton_best_speaker_certificate.jpg', cap:'Best Speaker certificate', sub:"Teenagers' Festival Debate Competition, 2025"},
+  ]);
+
+  renderGrid('bncc-grid', [
+    {file:'bncc-junior-devision-cadet-during-parade-2017.jpg', cap:'Junior Division cadet, parade', sub:'2017 - first year in BNCC'},
+    {file:'bncc-junior-devision-cadet-during-parade-2017 (2).jpg', cap:'Parade formation, 2017'},
+    {file:'bncc-me-during-battalion-camp-2017.png', cap:'Battalion Camp', sub:'2017'},
+    {file:'bncc-commandar-promoting-me-to-corporal-badge-ceremony-portrait-image.jpg', cap:'Promotion to Corporal', sub:'Badge ceremony'},
+    {file:'bncc-me-at-regimental-camp.jpg', cap:'Regimental Camp', sub:'2024'},
+    {file:'bncc-regimental-camp-tents.jpg', cap:'Regimental Camp grounds'},
+    {file:'regimental_camp_successful_completion_certificate.jpeg', cap:'Regimental Camp completion certificate'},
+    {file:'bncc-regimental-camp-completion-certificate_scan.jpg', cap:'Regimental Camp certificate, scanned copy'},
+    {file:'bncc-regimental-camp-english-best-speaker-medal-holding-in-hand.jpg', cap:'Best English Speaker medal'},
+    {file:'bncc-me-at-the-central-camp.jpeg', cap:'Central Camp', sub:'2025'},
+    {file:'Central-camp-self-portrait.jpg', cap:'Central Camp, self portrait'},
+    {file:'bncc-central-camp-medal.jpg', cap:'Central Camp medal'},
+    {file:'central_camp_successful_completion_certificate.jpeg', cap:'Central Camp completion certificate'},
+    {file:'bncc-3-medals-side-by-side.jpg', cap:'Medals earned across camps'},
+    {file:'bncc-my-boot-n-my-medal-image.jpg', cap:'Boots and medal'},
+    {file:'bncc-my-pic-after-a-bncc-parade-2024.jpeg', cap:'After a national parade', sub:'2024'},
+    {file:'bncc-me-after-national-parade-2023.jpg', cap:'After a national parade', sub:'2023'},
+    {file:'bncc-me-getting-medal-n-certificate-for-inter-company-volleyball-competiton.jpg', cap:'Receiving runner-up medal', sub:'Inter-company volleyball, 2024'},
+  ]);
+
+  renderGrid('science-grid', [
+    {file:'science-fair-2018.jpg', cap:'Science Fair', sub:'2018'},
+    {file:'Science fair-2019.jpg', cap:'Ethanol project, first version', sub:'3rd place, Divisional - 2019'},
+    {file:'science_fair_2019_taking_certificate.jpg', cap:'Receiving the 2019 certificate'},
+    {file:'science_fair_2020_taking_receiving_the_crest_from_the_state_executive.jpg', cap:'Receiving the crest from the state executive', sub:'2020'},
+    {file:'assisting Team with science fair project.jpg', cap:'Assisting the team, build phase'},
+    {file:'science-fair-2024-team.jpg', cap:'Project team', sub:'2024 - 1st place, Divisional'},
+    {file:'science-fair-2024-project-debris-cleaner-human-rescue-machine.jpg', cap:'Debris-cleaner / rescue-machine build', sub:'2024 science fair project'},
+    {file:'science-fair-project-2025.jpg', cap:'Final independent version', sub:'2025 - 1st place, School Level'},
+    {file:'science-fair-2025-holding-my-project-with-my-teachers.jpg', cap:'With teachers, presenting the 2025 build'},
+    {file:'science-fair-2025-certificate-crest.jpg', cap:'2025 crest / certificate'},
+    {file:'science-fair-2025-certificate-scan.jpg', cap:'2025 certificate, full scan'},
+    {file:'climate-science-olympiad-certificate.jpg', cap:'International Climate Science Olympiad', sub:'Quarter-Finalist, 2024'},
+    {file:'black-hole-poster.png', cap:'Astrophysics poster project'},
+  ]);
+
+  renderGrid('business-grid', [
+    {file:'business-case-comp-1-slide- MARXCELLENCE.pdf', cap:'MarXellence 2026 - Pitch Deck', sub:'Business case competition'},
+    {file:'business-case-comp-2-slide-creadive.pdf', cap:'Creadive 2026 - Pitch Deck', sub:'Business case competition'},
+  ]);
+
+  renderGrid('design-grid', (function(){
+    const files = ['social-media-post-design (1).jpg','social-media-post-design (1).png','social-media-post-design (2).jpg','social-media-post-design (2).png','social-media-post-design (3).jpg','social-media-post-design (3).png','social-media-post-design (4).jpg','social-media-post-design (4).png','social-media-post-design (5).png','social-media-post-design (6).png','social-media-post-design (7).png','social-media-post-design (8).png','social-media-post-design (9).png'];
+    return files.map((f,i)=>({file:f, cap:'Social media post design #'+(i+1)}));
+  })().concat([
+    {file:'graphic-design-mousepad-1.jpg', cap:'Mousepad design, concept 1'},
+    {file:'graphic-design-mousepad-2.jpg', cap:'Mousepad design, concept 2'},
+    {file:'Logo designs mockup I made.png', cap:'Logo design mockups'},
+  ]));
+
+  renderGrid('video-grid', [
+    {file:'Video-Editing-Rushed-Intro-That-I-Made.mp4', cap:'Channel intro edit'},
+    {file:'Video-Edit-Restaurant-Promo.mp4', cap:'Restaurant promo edit'},
+    {file:'video-edit-revoluton-tribute.mp4', cap:'Tribute edit'},
+    {file:'motion-graphic-animation-that-I-made.mp4', cap:'Original motion graphic animation'},
+    {file:'Motion-Graphic-Tribute-To-Assassins-Creed.mp4', cap:'Motion graphic tribute piece'},
+  ]);
+
+  renderGrid('deck-grid', [
+    {file:'Newspaper Analysis Powerpoint presentation design.pdf', cap:'Newspaper analysis - slide design'},
+    {file:'Powerpoint presentation design on Asthma.pdf', cap:'Asthma - slide design'},
+    {file:'Powerpoint presentation design on hypertension.pdf', cap:'Hypertension - slide design'},
+    {file:'Powerpoint presentation design on type-2-diabetes.pdf', cap:'Type 2 Diabetes - slide design'},
+  ]);
+
+  renderGrid('work-grid', [
+    {file:'Place where I worked for a year.jpg', cap:'The computer shop', sub:'Sept 2022 – Oct 2023'},
+    {file:'work_experience_certificate_computer_operator_a4_size.jpeg', cap:'Work experience certificate', sub:'Computer Operator'},
+  ]);
+
+  renderGrid('projects-grid', [
+    {file:'1. achievementdna_login_window.png', cap:'AchievementDNA - login window'},
+    {file:'2. achievementdna_login_dashboard.png', cap:'AchievementDNA - dashboard'},
+    {file:'3. achievementdna_login_dnabase.png', cap:'AchievementDNA - database view'},
+    {file:'4. achievementdna_login_achievements.png', cap:'AchievementDNA - achievements view'},
+    {file:'media_scanner_1_main_window.png', cap:'Media Finder - main window'},
+    {file:'media_scanner_2_scan_window.png', cap:'Media Finder - scan window'},
+    {file:'media_scanner_3_about_developer_about_app.png', cap:'Media Finder - about app / developer'},
+    {file:'todolist_main_screen.png', cap:'Personal Focus To-Do List - main screen'},
+  ]);
+
+  renderGrid('blog-grid', (function(){
+    const files = ['blog 1.pdf','blog 2.pdf','blog 3.pdf','blog 4.pdf','blog 5.pdf','blog 6.pdf','blog 7.pdf','blog 8.pdf'];
+    return files.map((f,i)=>({file:f, cap:'Published blog / SEO article #'+(i+1)}));
+  })());
+
+  renderGrid('wall-grid', [
+    {file:'closeup-faceshot-self.jpeg', cap:'Portrait'},
+    {file:'me-sitting-at-a-museum.jpeg', cap:'At a museum'},
+    {file:'Self image at a library.jpg', cap:'At the library'},
+    {file:'acted-in-a-short-film-image.jpg', cap:'Acting in a short film', sub:'Side creative project'},
+    {file:'acting_in_a_drama_for_an_event.jpg', cap:'Acting in a drama', sub:'School / cultural event'},
+    {file:'helping_peer_learn_computer.png', cap:'Helping a peer learn a computer skill', sub:'Informal tech support'},
+  ]);
+
+  const menuBtn = document.getElementById('menu-btn');
+  const navList = document.getElementById('nav-list');
+  menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navList.classList.remove('open')));
+});
+
+/* ---------- PRINT: scale each folder-body's content to exactly fill its
+   (fixed, A4-page-sized) bordered box - never shrinking the box itself. ---------- */
+function fitContentToPrintPage(){
+  document.querySelectorAll('.folder-body > .content-fit').forEach(wrap => {
+    const box = wrap.parentElement;
+    wrap.style.transform = 'none';
+    wrap.style.width = '100%';
+    const boxHeight = box.clientHeight;
+    if(!boxHeight) return;
+    let natHeight = wrap.scrollHeight;
+    let scale = Math.min(1, boxHeight / natHeight);
+    if(scale < 1){
+      // widen temporarily so the layout reflows to use the extra width the
+      // scale-down will reclaim, then measure again for an accurate fit
+      wrap.style.width = (100 / scale) + '%';
+      natHeight = wrap.scrollHeight;
+      scale = Math.min(1, boxHeight / natHeight);
+    }
+    wrap.style.transform = `scale(${scale})`;
+    wrap.style.transformOrigin = 'top left';
+  });
+}
+function resetPrintFit(){
+  document.querySelectorAll('.content-fit').forEach(wrap => {
+    wrap.style.transform = '';
+    wrap.style.width = '';
+  });
+}
+window.addEventListener('beforeprint', fitContentToPrintPage);
+window.addEventListener('afterprint', resetPrintFit);
+if(window.matchMedia){
+  const printQuery = window.matchMedia('print');
+  printQuery.addEventListener('change', e => { if(e.matches) fitContentToPrintPage(); else resetPrintFit(); });
+}
+</script>
+</body>
+</html>
